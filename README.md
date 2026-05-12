@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Antigravity Study System
 
-## Getting Started
+O **Antigravity Study System** é um dashboard de estudos de alta performance projetado para estudantes de TI e Teologia Secular que buscam produtividade extrema e aprendizado ativo. 
 
-First, run the development server:
+Desenvolvido com uma abordagem **Offline-First**, o sistema garante que seus dados estejam sempre disponíveis, independentemente da conexão com a internet, utilizando persistência local avançada com IndexedDB.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🧠 Principais Funcionalidades
+
+- **Dashboard Inteligente**: Visão geral de progresso, gráficos de tempo de estudo e streaks diários.
+- **Antigravity Mode**: Algoritmo de priorização que sugere automaticamente o que estudar baseado em revisões atrasadas e metas.
+- **Sistema de Flashcards (SM-2)**: Algoritmo de repetição espaçada (Spaced Repetition) para memorização de longo prazo.
+- **Modo Foco (Pomodoro)**: Timer integrado para Deep Work com registro automático de sessões.
+- **Gestão de Conteúdo (Zettelkasten)**: Sistema de notas interligadas para construção de um "Segundo Cérebro".
+- **Trilhas Especializadas**: Organização dedicada para TI (Back-end, Front-end, DB) e Teologia Secular.
+- **Offline-First**: Totalmente funcional sem internet via IndexedDB.
+
+## 🛠️ Stack Tecnológica
+
+- **Frontend**: Next.js 14+ (App Router), TypeScript.
+- **Estilização**: TailwindCSS v4, Framer Motion (animações), Lucide React (ícones).
+- **Gerenciamento de Estado**: Zustand.
+- **Banco de Dados**: Dexie.js (IndexedDB wrapper).
+- **Gráficos**: Recharts.
+
+## 📂 Estrutura de Pastas
+
+```text
+src/
+ ├── app/             # Rotas e Layouts (Next.js App Router)
+ ├── components/      # Componentes UI reutilizáveis (Design System)
+ ├── db/              # Schema e configuração do Dexie.js
+ ├── features/        # Módulos específicos (Dashboard, Flashcards, etc)
+ ├── lib/             # Utilitários, hooks e algoritmos (SM-2, cn)
+ ├── store/           # Zustand stores para estado global
+ └── types/           # Definições de tipos TypeScript
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Como Rodar Localmente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone o projeto**:
+   ```bash
+   git clone <link-do-repositorio>
+   cd antigravity-study
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Instale as dependências**:
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. **Inicie o servidor de desenvolvimento**:
+   ```bash
+   npm run dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. **Acesse**:
+   Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔒 Privacidade e Dados
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Todos os seus dados são armazenados localmente no seu navegador. Você pode exportar ou importar seus dados em formato JSON a qualquer momento através da aba de **Configurações**.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Desenvolvido com foco em alta performance e aprendizado profundo.*
