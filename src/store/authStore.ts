@@ -17,6 +17,27 @@ interface AuthState {
   clearError: () => void;
 }
 
+const cookieStorage = {
+  getItem: (name: string) => {
+    if (typeof document === "undefined") return null;
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) {
+      const cookieVal = parts.pop()?.split(";").shift();
+      return cookieVal ? decodeURIComponent(cookieVal) : null;
+    }
+    return null;
+  },
+  setItem: (name: string, value: string) => {
+    if (typeof document === "undefined") return;
+    document.cookie = `${name}=${encodeURIComponent(value)}; path=/; max-age=31536000; SameSite=Lax`;
+  },
+  removeItem: (name: string) => {
+    if (typeof document === "undefined") return;
+    document.cookie = `${name}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+  },
+};
+
 export const useAuthStore = create<AuthState>()(
   persist(
     (set, get) => ({
@@ -105,6 +126,7 @@ export const useAuthStore = create<AuthState>()(
     }),
     {
       name: "estudo-aprovado-auth",
+      storage: cookieStorage as any,
       partialize: (state) => ({
         user: state.user,
         isAuthenticated: state.isAuthenticated,

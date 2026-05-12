@@ -38,7 +38,7 @@ export interface User {
   };
   plan: "free" | "pro" | "premium";
   subscriptionExpiresAt?: number;
-  isActive: boolean;
+  isActive: number; // 1 for true, 0 for false
   createdAt: number;
   updatedAt: number;
 }

@@ -35,7 +35,7 @@ export async function registerUser(
       dailyStudyGoal: 120,
     },
     plan: "free",
-    isActive: true,
+    isActive: 1,
     createdAt: now,
     updatedAt: now,
   };
@@ -94,7 +94,7 @@ export async function getCurrentUser(): Promise<User | undefined> {
 export async function logoutUser(): Promise<void> {
   const user = await getCurrentUser();
   if (user) {
-    await db.users.update(user.id!, { isActive: false, updatedAt: Date.now() });
+    await db.users.update(user.id!, { isActive: 0, updatedAt: Date.now() });
   }
 }
 
